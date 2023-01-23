@@ -52,7 +52,7 @@ if uploaded_file is not None:
 
        #idf.columns
 
-
+       st.markdown("""<hr style="height:1px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
        # In[637]:
        option = st.selectbox(
            'What Comodity you want to Predict',
@@ -219,7 +219,7 @@ if uploaded_file is not None:
 
        dfg=dfr.reset_index().join(idfo[[predictC]])
        #st.write(dfg)
-
+       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 
        # In[660]:
        st.write("Forecast for next 4 months")
@@ -245,7 +245,7 @@ if uploaded_file is not None:
        # In[ ]:
 
 
-
+       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
        st.write("Model Performance")
        import plotly.express as px
        fig=px.line(dfg2, x='Date', y='value', color='variable' )
