@@ -251,3 +251,6 @@ if uploaded_file is not None:
        fig=px.line(dfg2, x='Date', y='value', color='variable' )
        #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
        st.plotly_chart(fig, use_container_width=True)
+       
+       fig1 = m.plot(forecast)
+       st.write(fig1)
