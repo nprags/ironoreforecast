@@ -12,7 +12,7 @@ import streamlit as st
 # In[631]:
 st.header("Iron Ore Price Forecasting Tool")
 st.write("Automated Forecast leveraging the historical price trend and seasonality")
-st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 st.write("💡 The automated forecasting tool uses historical ASP published by IBM and runs advanced Machine Learning to forecast the short term ASP" )
 uploaded_file = st.file_uploader("Import Historical Data")
 if uploaded_file is not None:
