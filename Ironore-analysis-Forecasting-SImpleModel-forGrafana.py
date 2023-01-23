@@ -174,6 +174,8 @@ if uploaded_file is not None:
        df_predict3 = df1.drop(columns=['y']).copy()
        #df_train3=df1[:(1096-90)].copy()
        df_train3=df1.copy()
+      
+       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 
        # In[652]:
        age = st.slider('How Many Months you want the forecast?', 1, 1, 5)
@@ -226,10 +228,10 @@ if uploaded_file is not None:
 
        dfg=dfr.reset_index().join(idfo[[predictC]])
        #st.write(dfg)
-       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+      
 
        # In[660]:
-       st.write("Forecast for next 4 months")
+       st.write(f"Forecast for next {age} month(s)")
        dfg['Date'] = pd.to_datetime(dfg['Date'], format='%Y-%m')
        #st.write(dfg)
        dfg1=dfg[dfg.isna().any(axis=1)]
