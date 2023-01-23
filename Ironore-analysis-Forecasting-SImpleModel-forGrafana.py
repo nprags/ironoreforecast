@@ -161,11 +161,7 @@ if uploaded_file is not None:
        # In[650]:
 
 
-       m=Prophet(yearly_seasonality=True,
-           weekly_seasonality=False,
-           daily_seasonality=False,
-                growth='linear',
-                seasonality_mode='additive')
+     
 
 
        # In[651]:
@@ -179,14 +175,22 @@ if uploaded_file is not None:
 
        # In[652]:
        age = st.slider('How Many Months you want the forecast?', 1, 1, 5)
+       widthC = st.slider('Slide lEFT to have narrowed forecast', 0, 100, 95)
+      
+       m=Prophet(yearly_seasonality=True,
+           weekly_seasonality=False,
+           daily_seasonality=False,
+                growth='linear',
+                seasonality_mode='additive',
+                interval_width=widthC/100))
+       
 
        m.fit(df_train3)
        future = m.make_future_dataframe(periods=age*30)
        #future
        #forecast= m.predict(df_predict3)
-       #forecast= m.predict(future)
-       widthC = st.slider('Slide lEFT to have narrowed forecast', 0, 100, 95)
-       forecast = Prophet(interval_width=widthC/100).fit(df_predict3).predict(future)
+       forecast= m.predict(future)
+       #forecast = Prophet(interval_width=widthC/100).fit(df_predict3).predict(future)
 
 
        # In[653]:
