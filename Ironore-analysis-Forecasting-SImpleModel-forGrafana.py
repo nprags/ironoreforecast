@@ -252,5 +252,5 @@ if uploaded_file is not None:
        #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
        st.plotly_chart(fig, use_container_width=True)
        
-       fig1 = m.plot(forecast)
+       fig1 = m.plot_components(forecast)
        st.write(fig1)
