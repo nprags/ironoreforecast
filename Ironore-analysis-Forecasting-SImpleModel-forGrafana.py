@@ -185,8 +185,8 @@ if uploaded_file is not None:
        #future
        #forecast= m.predict(df_predict3)
        #forecast= m.predict(future)
-       widthC = st.slider('Slide Right to have broader forecast', 0, 100, 80)
-       forecast = Prophet(interval_width=widthC/100).fit(df).predict(future)
+       widthC = st.slider('Slide lEFT to have narrowed forecast', 0, 100, 95)
+       forecast = Prophet(interval_width=widthC/100).fit(df_predict3).predict(future)
 
 
        # In[653]:
