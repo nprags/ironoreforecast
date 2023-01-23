@@ -7,6 +7,7 @@
 import pandas as pd
 from prophet import Prophet
 import streamlit as st
+import plotly.express as px
 st.set_page_config(page_title="Forecasting Tool", layout="centered",
                    initial_sidebar_state="auto")
 image= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHqsGNbNUrvnOf66P7VyGUiCsM7su-AMYb6EBbp-bwBA&s'
@@ -66,6 +67,10 @@ if uploaded_file is not None:
 
        predictC=option
        #predictC=input("What Comodity you want to Predict")
+       st.write(f"ASP Trend for {predictC}")
+       fig0=px.line(df, x='Date', y=predictC )
+       #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
+       st.plotly_chart(fig0, use_container_width=True)
 
 
        # In[638]:
@@ -171,10 +176,10 @@ if uploaded_file is not None:
        df_train3=df1.copy()
 
        # In[652]:
-
+       age = st.slider('How Many Months you want the forecast?', 1, 1, 5)
 
        m.fit(df_train3)
-       future = m.make_future_dataframe(periods=120)
+       future = m.make_future_dataframe(periods=age*30)
        #future
        #forecast= m.predict(df_predict3)
        forecast= m.predict(future)
@@ -249,7 +254,7 @@ if uploaded_file is not None:
 
        st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
        st.write("Model Performance")
-       import plotly.express as px
+       
        fig=px.line(dfg2, x='Date', y='value', color='variable' )
        #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
        st.plotly_chart(fig, use_container_width=True)
