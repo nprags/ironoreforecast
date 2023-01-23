@@ -7,7 +7,7 @@
 import pandas as pd
 from prophet import Prophet
 import streamlit as st
-st.set_page_config(page_title="Forecasting Tool", layout="wide")
+st.set_page_config(page_title="Forecasting Tool", layout="wide",initial_sidebar_state="expanded")
 
 # In[631]:
 st.header("Iron Ore Price Forecasting Tool")
