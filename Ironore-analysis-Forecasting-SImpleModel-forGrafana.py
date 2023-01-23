@@ -184,7 +184,10 @@ if uploaded_file is not None:
        future = m.make_future_dataframe(periods=age*30)
        #future
        #forecast= m.predict(df_predict3)
-       forecast= m.predict(future)
+       #forecast= m.predict(future)
+      widthC = st.slider('Slide Right to have broader forecast', 0, 100, 80)
+      forecast = Prophet(interval_width=widthC/100).fit(df).predict(future)
+
 
        # In[653]:
 
