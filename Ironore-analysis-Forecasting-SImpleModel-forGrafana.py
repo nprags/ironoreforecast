@@ -9,7 +9,8 @@ from prophet import Prophet
 import streamlit as st
 st.set_page_config(page_title="Forecasting Tool", layout="centered",
                    initial_sidebar_state="auto")
-
+image= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHqsGNbNUrvnOf66P7VyGUiCsM7su-AMYb6EBbp-bwBA&s'
+st.image(image, caption='Sunrise by the mountains')
 # In[631]:
 st.header("Iron Ore Price Forecasting Tool")
 st.write("Automated Forecast leveraging the historical price trend and seasonality")
