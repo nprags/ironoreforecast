@@ -182,7 +182,7 @@ if uploaded_file is not None:
            daily_seasonality=False,
                 growth='linear',
                 seasonality_mode='additive',
-                interval_width=widthC/100))
+                interval_width=widthC/100)
        
 
        m.fit(df_train3)
