@@ -258,4 +258,4 @@ if uploaded_file is not None:
        from prophet.plot import add_changepoints_to_plot
        fig2 = m.plot(forecast)
        a = add_changepoints_to_plot(fig2.gca(), m, forecast)
-       st.write(a)
+       st.write(fig2)
