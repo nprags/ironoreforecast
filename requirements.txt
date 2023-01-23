@@ -1,3 +1,4 @@
 pandas
 prophet
 streamlit
+plotly.express
