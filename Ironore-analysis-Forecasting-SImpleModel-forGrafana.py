@@ -251,10 +251,12 @@ if uploaded_file is not None:
        fig=px.line(dfg2, x='Date', y='value', color='variable' )
        #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
        st.plotly_chart(fig, use_container_width=True)
-       
+       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+       st.write("Trend and Seasonality")
        fig1 = m.plot_components(forecast)
        st.write(fig1)
-       
+       st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+       st.write("Significant Change Points ( Abruput Change in Pricing")
        from prophet.plot import add_changepoints_to_plot
        fig2 = m.plot(forecast)
        a = add_changepoints_to_plot(fig2.gca(), m, forecast)
