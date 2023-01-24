@@ -249,7 +249,7 @@ if uploaded_file is not None:
        dfg2=pd.melt(dfg, id_vars =['Date'], value_vars =['yhat','yhat_upper','yhat_lower',predictC])
        #st.write(dfg2)
        dfg2bar= dfg2.query('variable == @predictC | variable == "yhat"')
-       figB=px.line(dfg2bar, x='Date', y='value', color='variable' )
+       figB=px.bar(dfg2bar, x='Date', y='value', color='variable',barmode = 'group' )
        #fig = px.bar(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'],barmode = 'group')
        st.plotly_chart(figB, use_container_width=True)
       
