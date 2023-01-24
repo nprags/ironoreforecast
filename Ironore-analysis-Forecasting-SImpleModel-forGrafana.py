@@ -251,7 +251,7 @@ if uploaded_file is not None:
        dfg2bar= dfg2.query('variable == @predictC | variable == "yhat"')
        figB=px.line(dfg2bar, x='Date', y='value', color='variable' )
        #fig = px.line(dfcsv, x=dfcsv['ReportedDate'], y=dfcsv['yhat'])
-       st.plotly_chart(figb, use_container_width=True)
+       st.plotly_chart(figB, use_container_width=True)
       
        #fname
 
